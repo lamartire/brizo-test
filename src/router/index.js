@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import { Posts, Post } from 'pages'
+import { Posts } from 'pages'
 
 Vue.use(VueRouter)
 
@@ -11,10 +11,6 @@ export const router = new VueRouter({
     {
       path: '/',
       component: Posts,
-    },
-    {
-      path: '/:id',
-      component: Post,
     },
   ],
 })

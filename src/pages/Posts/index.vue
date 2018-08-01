@@ -78,7 +78,14 @@ export default {
     },
 
     async getPosts() {
-      await this.$store.dispatch('getPosts')
+      try {
+        await this.$store.dispatch('getPosts')
+      } catch (err) {
+        this.addNotification(
+          'error',
+          createErrorMessage(err.message, 'posts loading')
+        )
+      }
     },
 
     async onScrollPage(e) {
